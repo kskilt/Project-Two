@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movies.search(params[:search])
+    @movies = Movie.all
   end
 
   def show

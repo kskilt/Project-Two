@@ -1,6 +1,6 @@
 class TheatersController < ApplicationController
   def index
-    @theaters = Theater.search(params[:search])
+    @theaters = Theater.all
   end
 
   def show
