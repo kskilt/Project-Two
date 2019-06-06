@@ -1,21 +1,16 @@
-<h2>All Showings</h2>
 
-
-
-
-<ul>
   <% @showings.each do |showing| %>
+  <h2><%= showing.theater.name %></h2>
+<ul>
     <li>
       <%= showing.time %>
     </li>
+
     <li>
-      <%= showing.theater_id %>
-    </li>
-    <li>
-      <%= showing.movie_id %>
+      <%= showing.movie.name %>
       </li>
     <br>
-  <% end %>
-</ul>
 
-<%= link_to 'Create New Movie', new_movie_path %>
+</ul>
+  <% end %>
+<h4>Know something we don't know? <%= link_to 'Click here', new_movie_path %> to add another showtime</h4>

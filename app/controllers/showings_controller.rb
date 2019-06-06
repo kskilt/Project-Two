@@ -12,7 +12,6 @@ class ShowingsController < ApplicationController
   end
 
   def create
-    debugger
     @showing = Showing.new(showing_params)
 
     if @showing.save
