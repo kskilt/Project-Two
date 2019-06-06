@@ -1,0 +1,11 @@
+<h1> <%= @showing.time %> </h1>
+<p>
+  <strong>Movie:</strong>
+  <%= @showing.movie.name %>
+</p>
+  <strong>Theater:</strong>
+  <%= @showing.theater.name %>
+</p>
+
+
+<%= link_to 'Back', movies_path %>

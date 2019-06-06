@@ -3,5 +3,12 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  movies =[{ name: 'Star Wars' }, { name: 'Lord of the Rings' }]
+  movies.each do |movie|
+    Movie.create(movie)
+  end
+
+  theaters =[{name: 'Regal Cinema'}, {name: 'Wells Fargo Theater'}, {name: 'AMC'}, {name: 'Fandango Theater'}]
+  theaters.each do |theater|
+    Theater.create(theater)
+  end

@@ -1,0 +1,6 @@
+<%= form_for @showing do |f| %>
+  <%= f.text_field :time %>
+  <%= f.collection_select :movie_id, Movie.all, :id, :name %>
+  <%= f.collection_select :theater_id, Theater.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
