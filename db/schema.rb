@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_145822) do
+ActiveRecord::Schema.define(version: 2019_06_07_123550) do
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "screens", force: :cascade do |t|
+    t.integer "theater_id"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,11 +32,19 @@ ActiveRecord::Schema.define(version: 2019_06_05_145822) do
     t.integer "theater_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "screen_id"
   end
 
   create_table "theaters", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

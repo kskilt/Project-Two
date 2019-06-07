@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :sessions
+  get 'screens/show'
+  get 'screens/index'
+  get 'screens/new'
+  resources :users
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   root to: 'welcome#hello'
   get 'welcome/index'
   resources :movies

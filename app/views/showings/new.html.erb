@@ -1,6 +1,11 @@
-<%= form_for @showing do |f| %>
-  <%= f.text_field :time %>
+<%= form_for theater_showings_path do |f| %>
+  <label for='time'>Select Start Time:</label>
+
+<input type="datetime-local" id="meeting-time"
+       name="meeting-time" value="2018-06-12T19:30"
+       min="2018-06-07T00:00" max="2018-06-14T00:00">
   <%= f.collection_select :movie_id, Movie.all, :id, :name %>
   <%= f.collection_select :theater_id, Theater.all, :id, :name %>
+  <%= f.collection_select :screen_id, Screen.all, :id, :name %>
   <%= f.submit %>
 <% end %>

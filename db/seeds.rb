@@ -12,3 +12,5 @@
   theaters.each do |theater|
     Theater.create(theater)
   end
+
+  User.create(name:'kevin', password:'123')

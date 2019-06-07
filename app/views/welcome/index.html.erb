@@ -1,3 +1,6 @@
-<h1> Hello, Rails</h1>
-<%= link_to 'Theaters', controller: 'theaters' %>
+<h1>Hi there, </h1>
+<%= link_to 'Theaters', controller: 'theaters' %><br>
 <%= link_to 'Movies', controller: 'movies' %>
+<br><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+  <%end%>
