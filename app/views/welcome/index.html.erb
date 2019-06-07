@@ -1,6 +1,6 @@
-<h1>Hi there, </h1>
-<%= link_to 'Theaters', controller: 'theaters' %><br>
-<%= link_to 'Movies', controller: 'movies' %>
-<br><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-  <%end%>
+<h1>Hi there, <%= @current_user.name %></h1>
+<%= link_to 'Theaters', theaters_path %><br>
+<%= link_to 'Movies', movies_path %>
+<br>
+
+<%= button_to "Logout", logout_path, method: :delete %>

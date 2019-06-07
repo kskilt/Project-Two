@@ -1,26 +1,17 @@
 class SessionsController < ApplicationController
-  def new
+  def new # singin form
   end
 
-  def create
-
-
+  def create # processing the signin
     user = User.find_by(name: params[:users][:name])
-
-    user = user.try(:authenticate, params[:users][:password])
-
-    return redirect_to(controller: 'sessions', action: 'new') unless user
+    redirect_to(new_session_path) unless user.try(:authenticate, params[:users][:password])
 
     session[:user_id] = user.id
-
-    @user = user
-
-    redirect_to controller: 'welcome', action: 'index'
+    redirect_to root_path
   end
 
-  def destroy
-    session.delete :user_id
-
-    redirect_to '/'
+  def destroy # logout
+    session[:user_id] = nil
+    redirect_to new_session_path
   end
 end

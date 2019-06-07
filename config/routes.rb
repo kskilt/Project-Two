@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  get 'screens/show'
-  get 'screens/index'
-  get 'screens/new'
-  resources :users
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
-  root to: 'welcome#hello'
-  get 'welcome/index'
+  root to: 'welcome#index'
+
   resources :movies
   resources :theaters do
     resources :showings
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :screens, only: [:show, :new, :index]
+  resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create]
+  delete "/logout", to: "sessions#destroy", as: "logout"
 end

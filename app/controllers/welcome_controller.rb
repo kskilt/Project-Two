@@ -1,11 +1,7 @@
 class WelcomeController < ApplicationController
-  def hello
-    if session[:name]
-      render 'index'
-    else
-      redirect_to controller: 'sessions', action: 'new'
-    end
-  end
+  before_action :check_if_logged_in
+
   def index
+    @current_user = User.find(session[:user_id])
   end
 end
