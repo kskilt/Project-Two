@@ -1,4 +1,11 @@
 <%= form_with scope: :users, url: sessions_path, local: true do |f| %>
+  <% if @session.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Incorrect Username or Password
+      </h2>
+    </div>
+  <% end %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
