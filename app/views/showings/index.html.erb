@@ -1,6 +1,6 @@
 
   <% @showings.each do |showing| %>
-  <h2><%= showing.theater.name %></h2>
+  <h2><%= link_to showing.theater.name, theater_showings_path(showing) %></h2>
 <ul>
     <li>
       <%= showing.time %>

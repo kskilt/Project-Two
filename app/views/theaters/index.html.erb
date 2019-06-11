@@ -3,7 +3,7 @@
 <ul>
   <% @theaters.each do |theater| %>
     <li>
-      <%= theater.name %>
+      <%= link_to theater.name, theater_path(theater) %>
     </li>
     <br>
   <% end %>

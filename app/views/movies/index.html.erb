@@ -6,8 +6,12 @@
 <ul>
   <% @movies.each do |movie| %>
     <li>
-      <%= movie.name %>
+      <%=link_to movie.name, movie_path(movie) %>
     </li>
+    <br>
+    <p>
+      <%= movie.description %>
+    </p>
     <br>
   <% end %>
 </ul>

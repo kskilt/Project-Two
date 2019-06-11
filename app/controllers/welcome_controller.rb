@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :check_if_logged_in
+  before_action :authorize
 
   def index
     @current_user = User.find(session[:user_id])

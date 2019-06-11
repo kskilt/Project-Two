@@ -1,5 +1,5 @@
 class ShowingsController < ApplicationController
-
+before_action :authorize
   def index
     @showings = Showing.all
   end
@@ -8,10 +8,12 @@ class ShowingsController < ApplicationController
   end
 
   def new
+    @theater = Theater.find(params[:theater_id])
     @showing = Showing.new
   end
 
   def create
+    @theater = Theater.find(params[:theater_id])
     @showing = Showing.new(showing_params)
 
     if @showing.save
@@ -23,6 +25,6 @@ class ShowingsController < ApplicationController
 
   private
   def showing_params
-    params.require(:showing).permit(:time, :theater_id, :movie_id)
+    params.require(:showing).permit(:time, :theater_id, :movie_id, :screen_id)
   end
 end

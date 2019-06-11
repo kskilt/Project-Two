@@ -61,11 +61,9 @@ If you've added any additional functionality to your application that you'd like
 
 
 Notes:
-Baller
-Ball is life.
+
 date time picker (html?)
 
 Screen controller for has many/belongs to
 Showing belongs to a screen, and screens have many showings, but only screens that belong to that theater. Theater has many screens but screen only belongs to 1 theater.
 
-User contoller, name/password, has_secure -- for login/logout over sessions for logging, but can keep sessions to keep them locked in.

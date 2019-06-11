@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+before_action :authorize
   def index
     @movies = Movie.all
   end

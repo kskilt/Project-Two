@@ -7,11 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= link_to 'Home', controller: 'welcome' %>
   </head>
+  <nav><%= link_to 'Theaters', theaters_path %><br>
+<%= link_to 'Movies', movies_path %></nav>
 
   <body>
     <%= yield %>
     <br>
-    <%= link_to 'Home', controller: 'welcome' %>
+
   </body>
+  <footer><%= button_to "Logout", logout_path, method: :delete %></footer>
 </html>

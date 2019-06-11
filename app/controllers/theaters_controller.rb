@@ -1,4 +1,5 @@
 class TheatersController < ApplicationController
+  before_action :authorize
   def index
     @theaters = Theater.all
   end

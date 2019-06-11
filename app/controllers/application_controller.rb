@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  def check_if_logged_in
+  def authorize
     redirect_to new_session_path unless logged_in?
   end
 
