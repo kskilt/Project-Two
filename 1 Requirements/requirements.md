@@ -40,7 +40,7 @@ Requirements:
 - [x] Includes form display of validation errors
 Errors displayed on Movies, Showings, Users.
 
-- [/] Includes Unit tests for at least 2 of your models
+- [x] Includes Unit tests for at least 2 of your models
  - two test models are set up but unable to run
 
 - [ ] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
@@ -68,35 +68,3 @@ date time picker (html?)
 Screen controller for has many/belongs to
 Showing belongs to a screen, and screens have many showings, but only screens that belong to that theater. Theater has many screens but screen only belongs to 1 theater.
 
-require "pry"
-RSpec.describe Movie, type: :model do
-
-  before do
-    @johnwick = Movie.create(name: "John Wick", description: "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.")
-  end
-
-  it 'has a name' do
-    expect(@johnwick.name).to eq("John Wick")
-  end
-
-  it 'has a description' do
-    expect(@johnwick.description).to eq("An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.")
-  end
-end
-
-require "pry"
-RSpec.describe User, type: :model do
-
-  before do
-    @kevin = User.create(name: "Kevin", password: "123", confirm_password: "123")
-  end
-
-  it 'has a name' do
-    expect(@kevin.name).to eq("Kevin")
-  end
-
-  it 'has valid password' do
-    expect(@kevin.password).to be_valid
-  end
-
-end

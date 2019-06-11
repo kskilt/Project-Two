@@ -21,6 +21,19 @@ before_action :authorize
     end
   end
 
+  def edit
+    find_showing
+  end
+
+  def update
+    @showing = Showing.find(params[:id])
+    if @showing.update(showing_params)
+      redirect_to theater_showings_path
+    else
+      render "edit"
+    end
+  end
+
   def destroy
     find_showing
     @showing.destroy
