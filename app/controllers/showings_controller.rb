@@ -13,7 +13,8 @@ before_action :authorize
   end
 
   def create
-    find_showing
+    @theater = Theater.find(params[:theater_id])
+    @showing = Showing.create(showing_params)
     if @showing.save
       redirect_to theater_showings_path
     else
@@ -22,7 +23,8 @@ before_action :authorize
   end
 
   def edit
-    find_showing
+    @theater = Theater.find(params[:theater_id])
+    @showing = Showing.find(params[:id])
   end
 
   def update
@@ -35,18 +37,16 @@ before_action :authorize
   end
 
   def destroy
-    find_showing
+    @theater = Theater.find(params[:theater_id])
+    @showing = Showing.find(params[:id])
     @showing.destroy
 
-    redirect_to theaters_showings_path
+    redirect_to theater_showings_path
   end
 
   private
   def showing_params
     params.require(:showing).permit(:time, :theater_id, :movie_id, :screen_id)
   end
-  def find_showing
-    @theater = Theater.find(params[:theater_id])
-    @showing = Showing.find(params[:id])
-  end
+
 end

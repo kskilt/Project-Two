@@ -1,11 +1,12 @@
 <h1> <%= @showing.time %> </h1>
 <p>
   <strong>Movie:</strong>
-  <%= @showing.movie.name %>
+  <%= @showing.movie.name %><br>
+  <%= @showing.movie.description %>
 </p>
   <strong>Theater:</strong>
-  <%= link_to 'theaters/theater_id/showings', @showing.theater.name %>
+  <%= link_to @showing.theater.name, theater_showings_path(@showing) %>
 </p>
 
 
-<%= link_to 'Back', theater_showing_path %>
+<%= link_to 'Back', theater_showings_path %>

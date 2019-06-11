@@ -1,13 +1,14 @@
-<h2>All Theaters</h2>
+<h2>Select a Theater near you!</h2>
 
 <ul>
   <% @theaters.each do |theater| %>
     <li>
-      <%= link_to theater.name, theater_path(theater) %>
+      <%= link_to theater.name, theater_showings_path(theater) %>
     </li>
+    <p> <%= theater.location %> </p>
     <br>
   <% end %>
 </ul>
 
 <%= link_to 'Create New Theater', new_theater_path %>
-<%= link_to 'Home', root_path %>
+

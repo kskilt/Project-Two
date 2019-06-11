@@ -13,7 +13,7 @@ Requirements:
     Items through Ingredients)
 - Theater has many movies through showings
 
-- [/] The "through" part of the has_many through includes at least one user
+- [x] The "through" part of the has_many through includes at least one user
     submittable attribute (e.g. ingredient#quantity)
     -- User is able to pick a time for a showing, where a movie has a theater through the showing but it needs work.
 
@@ -34,7 +34,7 @@ Requirements:
 - [x] Includes nested resource show or index (e.g. users/2/recipes)
 - Showings exist nested inside Theaters, '/theaters/1/showings'
 
-- [/] Includes nested resource "new" form (recipes/1/ingredients/new)
+- [x] Includes nested resource "new" form (recipes/1/ingredients/new)
 - theaters/1/showings/new will pull up a page with movie/theater/screen drop down options but needs to be worked over with proper routes/html
 
 - [x] Includes form display of validation errors

@@ -1,25 +1,3 @@
-<%= form_for [@theater, @showing] do |f| %>
-<% if @showing.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@showing.errors.count, "error") %> prohibited
-        this showing from being saved:
-      </h2>
-      <ul>
-        <% @showing.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+Add a showing:
 
-  <label for='time'>Select Start Time:</label>
-
-<input type="datetime-local" id="showing[time]"
-       name="showing[time]" value="2018-06-12T19:30"
-       >
-  <%= f.collection_select :movie_id, Movie.all, :id, :name %>
-  <%= f.collection_select :theater_id, Theater.all, :id, :name %>
-  <%= f.collection_select :screen_id, Screen.all, :id, :name %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
