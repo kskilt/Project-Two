@@ -1,8 +1,11 @@
-class SessionsController < ApplicationController
-  def new # singin form
-  end
+# frozen_string_literal: true
 
-  def create # processing the signin
+# Stores whether user is logged in
+class SessionsController < ApplicationController
+  def new; end
+
+  # processing the signin
+  def create
     user = User.find_by(name: params[:users][:name])
     if user.authenticate(params[:users][:password])
       session[:user_id] = user.id
@@ -12,9 +15,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy # logout
+  # logouts
+  def destroy
     session[:user_id] = nil
     redirect_to new_session_path
   end
 end
-

@@ -1,5 +1,7 @@
-class ApplicationController < ActionController::Base
+# frozen_string_literal: true
 
+# Checks log in
+class ApplicationController < ActionController::Base
   def authorize
     redirect_to new_session_path unless logged_in?
   end

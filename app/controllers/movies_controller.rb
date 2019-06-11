@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Full CRUD Movies Controller
 class MoviesController < ApplicationController
-before_action :authorize
+  before_action :authorize
   def index
     @movies = Movie.all
   end
@@ -31,7 +34,7 @@ before_action :authorize
     if @movie.update(movie_params)
       redirect_to movies_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -42,8 +45,8 @@ before_action :authorize
     redirect_to movies_path
   end
 
-
   private
+
   def movie_params
     params.require(:movie).permit(:name)
   end

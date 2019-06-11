@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
+# Shows movie listings at theaters
 class ShowingsController < ApplicationController
-before_action :authorize
+  before_action :authorize
   def index
     @showings = Showing.all
   end
+
   def show
     @showing = Showing.find(params[:id])
   end
@@ -33,7 +37,7 @@ before_action :authorize
     if @showing.update(showing_params)
       redirect_to theater_showings_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -46,8 +50,8 @@ before_action :authorize
   end
 
   private
+
   def showing_params
     params.require(:showing).permit(:time, :theater_id, :movie_id, :screen_id)
   end
-
 end

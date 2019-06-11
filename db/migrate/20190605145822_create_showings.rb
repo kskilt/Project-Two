@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# creating showings table
 class CreateShowings < ActiveRecord::Migration[5.2]
   def change
     create_table :showings do |t|

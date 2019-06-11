@@ -20,6 +20,5 @@
        >
   <%= f.collection_select :movie_id, Movie.all, :id, :name %>
   <%= f.collection_select :screen_id, @theater.screens, :id, :name %>
-
   <%= f.submit %>
 <% end %>

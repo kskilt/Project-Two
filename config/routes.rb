@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'welcome#index'
 
@@ -6,9 +8,9 @@ Rails.application.routes.draw do
     resources :showings
   end
 
-  resources :screens, only: [:show, :new, :index]
-  resources :users, only: [:new, :create]
+  resources :screens, only: %i[show new index]
+  resources :users, only: %i[new create]
 
-  resources :sessions, only: [:new, :create]
-  delete "/logout", to: "sessions#destroy", as: "logout"
+  resources :sessions, only: %i[new create]
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
 end

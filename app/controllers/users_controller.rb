@@ -1,9 +1,14 @@
+# frozen_string_literal: true
+
+# Allows users to sign up
 class UsersController < ApplicationController
-  def new # Signup form
+  # Signup form
+  def new
     @user = User.new
   end
 
-  def create # process the signup
+  # process the signup
+  def create
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id

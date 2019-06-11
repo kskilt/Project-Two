@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Home page
 class WelcomeController < ApplicationController
   before_action :authorize
 
