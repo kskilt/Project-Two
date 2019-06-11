@@ -45,7 +45,7 @@ Errors displayed on Movies, Showings, Users.
 
 - [ ] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
 
-- [ ] Includes a README.md with an application description and installation guide
+- [X] Includes a README.md with an application description and installation guide
 
 Confirm:
 

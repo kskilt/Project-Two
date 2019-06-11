@@ -12,6 +12,7 @@ class TheatersController < ApplicationController
     @theater = Theater.new
   end
 
+
   def create
     @theater = Theater.new(theater_params)
 

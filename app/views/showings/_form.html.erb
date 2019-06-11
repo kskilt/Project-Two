@@ -19,7 +19,7 @@
        name="showing[time]" value="2018-06-12T19:30"
        >
   <%= f.collection_select :movie_id, Movie.all, :id, :name %>
-  <%= f.collection_select :theater_id, Theater.all, :id, :name %>
-  <%= f.collection_select :screen_id, Screen.all, :id, :name %>
+  <%= f.collection_select :screen_id, @theater.screens, :id, :name %>
+
   <%= f.submit %>
 <% end %>

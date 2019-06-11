@@ -4,6 +4,6 @@
   <%= @movie.description %>
 
 </p>
-
+<strong> Notice a mistake? <%= link_to 'Click here', edit_movie_path(@movie)%> to make a quick change!</strong><br>
 
 <%= link_to 'Back', movies_path %>

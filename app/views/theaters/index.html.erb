@@ -6,9 +6,15 @@
       <%= link_to theater.name, theater_showings_path(theater) %>
     </li>
     <p> <%= theater.location %> </p>
+    <p> Number of Screen: <%= theater.screens.count%> </p>
+    <% theater.screens.each  do |screen|%>
+    <% if screen.screen_type == "Imax" %>
+      <p> IMAX available at this theater! </p>
+      <% end %>
+    <% end %>
     <br>
   <% end %>
 </ul>
 
-<%= link_to 'Create New Theater', new_theater_path %>
+
 

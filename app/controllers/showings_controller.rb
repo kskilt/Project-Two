@@ -15,6 +15,7 @@ before_action :authorize
   def create
     @theater = Theater.find(params[:theater_id])
     @showing = Showing.create(showing_params)
+    @showing.theater = @theater
     if @showing.save
       redirect_to theater_showings_path
     else

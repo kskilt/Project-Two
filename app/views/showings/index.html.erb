@@ -3,9 +3,12 @@
   <h2><%= link_to showing.movie.name, movie_path(showing.movie_id) %></h2>
 <ul>
     <li>
-      <%= showing.time %>
+      Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>
     </li>
-
+    <li>
+      Showing Time - <%= showing.time.strftime("%I:%M %p") %>
+    </li>
+    <li> Screen Type - <%= showing.screen.screen_type %> </li>
     <li>
       <%= link_to showing.theater.name, theater_showings_path(showing) %>
       </li>
