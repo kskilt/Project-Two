@@ -1,3 +1,4 @@
+require 'rails_helper'
 require "pry"
 RSpec.describe Movie, type: :model do
 

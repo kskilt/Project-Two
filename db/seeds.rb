@@ -15,7 +15,10 @@
     Movie.create(movie)
   end
 
-  theaters =[{name: 'Regal Cinema'}, {name: 'Wells Fargo Theater'}, {name: 'AMC'}, {name: 'Fandango Theater'}]
+  theaters =[{name: 'Regal Cinema', location: "Brandywine Town Center"
+  {name: 'Wells Fargo Theater', location:'3601 S Broad St'},
+  {name: 'AMC', location: 'Granite Run Mall 8'},
+  {name: 'Fandango Theater', location: 'Broad and Patterson'}]
   theaters.each do |theater|
     Theater.create(theater)
   end
