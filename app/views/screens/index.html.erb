@@ -1,2 +1,10 @@
-<h1>Screens#index</h1>
-<p>Find me in app/views/screens/index.html.erb</p>
+<h3>Available Imax screenings in your area!</h3>
+
+<% Screen.imax.each do |screen| %>
+  <h5><%= screen.theater.name %><br></h5>
+  <p><% screen.theater.showings.each do |showing| %>
+    <%= showing.movie.name %>
+      Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>
+      Showing Time - <%= showing.time.strftime("%I:%M %p") %><br>
+  <% end %></p>
+<% end %>
