@@ -20,8 +20,8 @@ Requirements:
 - [x] Includes reasonable validations for simple model objects
   Showings ensure that it has a time, Screen, Movie, and theater (its a drop down option so just presence should be fine). User checks that it has a username with a minimum length of 5, uniqueness to avoid duplicate users, and password is present.
 
-- [ ] Includes a class level ActiveRecord scope method
-
+- [x] Includes a class level ActiveRecord scope method
+  :imax is pulling all imax theaters, and displaying in screens#index
 - [x] Includes signup (e.g. Devise)
   Sign up exists in Users Controller
 
@@ -43,7 +43,7 @@ Errors displayed on Movies, Showings, Users.
 - [x] Includes Unit tests for at least 2 of your models
  - two test models are set up but unable to run
 
-- [/] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
+- [x] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
 
 - [X] Includes a README.md with an application description and installation guide
 

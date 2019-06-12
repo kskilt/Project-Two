@@ -11,14 +11,17 @@ Showing.destroy_all
 movies = [
   {
     name: "Star Wars",
-    description: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a " \
-                 "Wookiee and two droids to save the galaxy from the Empire's " \
-                 "world-destroying battle station, while also attempting to rescue " \
-                 "Princess Leia from the mysterious Darth Vader.",
+    description: "Luke Skywalker joins forces with a Jedi Knight, a cocky" \
+                 "pilot, a Wookiee and two droids to save the galaxy from" \
+                 " the Empire's world-destroying battle station, while " \
+                 "also attempting to rescue Princess Leia from the " \
+                 "mysterious Darth Vader.",
   },
   { name: "Lord of the Rings",
     description:
-  "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron." },
+                "A meek Hobbit from the Shire and eight companions set out " \
+                "on a journey to destroy the powerful One Ring and save " \
+                "Middle-earth from the Dark Lord Sauron." },
 ]
 movies.each do |movie|
   Movie.create(movie)

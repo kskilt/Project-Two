@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :user do
-    name { 'power' }
-    password { '123' }
+    name { 'garett' }
+    password { 'please pass' }
   end
 end
