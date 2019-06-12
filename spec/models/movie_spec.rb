@@ -16,4 +16,9 @@ RSpec.describe Movie, type: :model do
       'An ex-hit-man comes out of retirement...'
     )
   end
+
+  it 'has a valid factory' do
+    expect(create(:movie)).to be_valid
+  end
+
 end
