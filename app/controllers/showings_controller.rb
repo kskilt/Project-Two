@@ -23,7 +23,7 @@ class ShowingsController < ApplicationController
     if @showing.save
       redirect_to theater_showings_path
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -37,7 +37,7 @@ class ShowingsController < ApplicationController
     if @showing.update(showing_params)
       redirect_to theater_showings_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -49,7 +49,7 @@ class ShowingsController < ApplicationController
     redirect_to theater_showings_path
   end
 
-  private
+private
 
   def showing_params
     params.require(:showing).permit(:time, :theater_id, :movie_id, :screen_id)

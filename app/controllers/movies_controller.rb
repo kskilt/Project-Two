@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to @movie
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
     if @movie.update(movie_params)
       redirect_to movies_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  private
+private
 
   def movie_params
     params.require(:movie).permit(:name)
