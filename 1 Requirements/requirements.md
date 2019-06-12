@@ -43,19 +43,19 @@ Errors displayed on Movies, Showings, Users.
 - [x] Includes Unit tests for at least 2 of your models
  - two test models are set up but unable to run
 
-- [ ] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
+- [/] Conforms to Nitro Ruby linting rules (running rubocop returns 0 offenses)
 
 - [X] Includes a README.md with an application description and installation guide
 
 Confirm:
 
-- [ ] The application is pretty DRY
+- [x] The application is pretty DRY
 
-- [ ] Limited logic in controllers
+- [x] Limited logic in controllers
 
 - [ ] Views use helper methods if appropriate
 
-- [ ] Views use partials if appropriate
+- [x] Views use partials if appropriate
 
 
 If you've added any additional functionality to your application that you'd like to demonstrate, please describe it below:
@@ -63,8 +63,4 @@ If you've added any additional functionality to your application that you'd like
 
 Notes:
 
-date time picker (html?)
-
-Screen controller for has many/belongs to
-Showing belongs to a screen, and screens have many showings, but only screens that belong to that theater. Theater has many screens but screen only belongs to 1 theater.
-
+I would like to add a search bar, with an Imax filter in long term goal

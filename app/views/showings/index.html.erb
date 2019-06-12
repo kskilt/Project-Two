@@ -8,7 +8,10 @@
     <li>
       Showing Time - <%= showing.time.strftime("%I:%M %p") %>
     </li>
-    <li> Screen Type - <%= showing.screen.screen_type %> </li>
+    <li> <%=if showing.screen.imax %>
+          <p>This is an Imax showing!</p>
+          <% end %>
+     </li>
     <li>
       <%= link_to showing.theater.name, theater_showings_path(showing) %>
       </li>

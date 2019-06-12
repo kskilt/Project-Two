@@ -3,15 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  before do
-    @johnwick = Movie.create(name: 'John Wick', description: 'An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.')
-  end
-
   it 'has a name' do
+    @johnwick = Movie.create(name: 'John Wick', description:
+      'An ex-hit-man comes out of retirement...')
     expect(@johnwick.name).to eq('John Wick')
   end
 
   it 'has a description' do
-    expect(@johnwick.description).to eq('An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.')
+    @johnwick = Movie.create(name: 'John Wick', description:
+      'An ex-hit-man comes out of retirement...')
+    expect(@johnwick.description).to eq(
+      'An ex-hit-man comes out of retirement...'
+    )
   end
 end
