@@ -3,8 +3,15 @@
 # Shows movie listings at theaters
 class ShowingsController < ApplicationController
   before_action :authorize
+  before_action :set_theater, only: %i[new create edit index]
+
+  def set_theater
+    @theater = Theater.find(params[:theater_id])
+  end
+
   def index
-    @showings = Showing.all
+    @showing = Showing.new
+    @showings = Showing.search(params[:search])
   end
 
   def show
@@ -12,12 +19,10 @@ class ShowingsController < ApplicationController
   end
 
   def new
-    @theater = Theater.find(params[:theater_id])
     @showing = Showing.new
   end
 
   def create
-    @theater = Theater.find(params[:theater_id])
     @showing = Showing.create(showing_params)
     @showing.theater = @theater
     if @showing.save
@@ -28,7 +33,6 @@ class ShowingsController < ApplicationController
   end
 
   def edit
-    @theater = Theater.find(params[:theater_id])
     @showing = Showing.find(params[:id])
   end
 
@@ -42,7 +46,6 @@ class ShowingsController < ApplicationController
   end
 
   def destroy
-    @theater = Theater.find(params[:theater_id])
     @showing = Showing.find(params[:id])
     @showing.destroy
 
