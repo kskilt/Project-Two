@@ -27,10 +27,11 @@ class ShowingsController < ApplicationController
     @showing = Showing.create(showing_params)
     @showing.theater = @theater
     if @showing.save
+      # binding.pry
       respond_to do |format|
         format.html {redirect_to theater_showings_path}
         format.json do
-          render json: @showing.to_json
+          render json: @showing.to_json( :include => [{:theater => {:only => :name}}, {:movie => {:only => :name}}, {:screen => {:only => :screen_type}}])
         end
       end
     else

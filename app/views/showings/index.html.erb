@@ -3,24 +3,25 @@
   <%= text_field_tag(:search, params[:search]) %>
   <%= submit_tag ("Search") %>
 <% end %>
-
-<% @showings.each do |showing| %>
-  <h2><%= link_to showing.movie.name, movie_path(showing.movie_id) %></h2>
-  <ul>
-    <li>
-      Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>
-    </li>
-    <li>
-      Showing Time - <%= showing.time.strftime("%I:%M %p") %>
-    </li>
-    <li>
-      <%= link_to showing.theater.name, theater_showings_path(showing) %>
-    </li>
-      <%= button_to "Delete Showing", theater_showing_path(showing.theater,showing),
-      method: :delete, data: { confirm: 'Are you sure?!' } %>
-    <br>
-  </ul>
-<% end %>
+<div id="showings">
+  <% @showings.each do |showing| %>
+    <h2><%= link_to showing.movie.name, movie_path(showing.movie_id) %></h2>
+    <ul>
+      <li>
+        Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>
+      </li>
+      <li>
+        Showing Time - <%= showing.time.strftime("%I:%M %p") %>
+      </li>
+      <li>
+        <%= link_to showing.theater.name, theater_showings_path(showing) %>
+      </li>
+        <%= button_to "Delete Showing", theater_showing_path(showing.theater,showing),
+        method: :delete, data: { confirm: 'Are you sure?!' } %>
+      <br>
+    </ul>
+  <% end %>
+</div>
 <h3> Create new Showing: </h3>
 <%= render 'form' %>
 
