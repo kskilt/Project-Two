@@ -12,7 +12,7 @@ class Showing {
 
   showingTemplate(showing) {
     return(`
-      <h2><%= link_to showing.movie, movie_path(showing.movie_id) %></h2>
+      <h2>${this.time}</h2>
   <ul>
     <li>
       Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>

@@ -18,9 +18,9 @@ $(function()  {
       const movie = response.movie.name
       const movie_id = response.movie_id
       const screen = response.screen.screen_type
-      const showing = new Showing(time, theater, movie, screen)
+      const showing = new Showing(time, theater, theater_id, movie, movie_id, screen)
 
-
+      console.log(showing.showingTemplate())
 
 // grab an place in the DOM you want to add content
 
