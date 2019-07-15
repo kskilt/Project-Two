@@ -32,7 +32,7 @@ class ShowingsController < ApplicationController
       respond_to do |format|
         format.html {redirect_to theater_showings_path}
         format.json do
-          render json: @showing.to_json( :include => [{:theater => {:only => :name}}, {:movie => {:only => :name}}, {:screen => {:only => :screen_type}}])
+          render json: @showing
         end
       end
     else

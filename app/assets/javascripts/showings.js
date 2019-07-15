@@ -11,7 +11,6 @@ $(function()  {
       dataType: "JSON",
       data: $(this).serializeArray()
     }).done(function(response){
-      console.log(response)
       const showing = new Showing(response)
 
       showing.showingTemplate()
