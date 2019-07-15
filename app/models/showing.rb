@@ -14,7 +14,7 @@ class Showing < ApplicationRecord
     if search
       movie = Movie.find_by(name: search)
       if movie
-        self.where(movie_id: movie)
+        where(movie_id: movie)
       else
         Showing.all
       end

@@ -31,7 +31,7 @@ class ShowingsController < ApplicationController
     if @showing.save
       # binding.pry
       respond_to do |format|
-        format.html {redirect_to theater_showings_path}
+        format.html { redirect_to theater_showings_path }
         format.json do
           render json: @showing
         end
