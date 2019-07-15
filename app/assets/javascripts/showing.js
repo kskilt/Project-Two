@@ -13,15 +13,15 @@ class Showing {
   showingTemplate(showing) {
     $("div.showing").append(`
       <h2><a href="localhost:3000/movies/${this.movie_id}"> ${this.movie}"</h2>
-  <ul>
-    <li>
-      Showing Day - ${this.time}
-    </li>
-    <li>
-      Showing Time -  ${this.time}
-    </li>
-    <br>
-  </ul>
+      <ul>
+        <li>
+          Showing Day - ${this.time}
+        </li>
+        <li>
+          Showing Time -  ${this.time}
+        </li>
+        <br>
+      </ul>
     `)
   }
 }

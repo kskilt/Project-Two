@@ -6,6 +6,8 @@ class Movie {
   }
 
   moviesTemplate(movie) {
-
+    return `
+      <h4> ${movie.description} </h4>
+      `
   }
 }
