@@ -3,7 +3,10 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
 
-  resources :movies
+  resources :movies do
+    get 'showing', on: :member
+  end
+
   resources :theaters do
     resources :showings
   end

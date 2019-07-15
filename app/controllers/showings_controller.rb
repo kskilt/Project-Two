@@ -24,7 +24,7 @@ class ShowingsController < ApplicationController
     @showing = Showing.new
   end
 
-  def format_
+  def format_showing
     respond_to do |format|
       format.html { redirect_to theater_showings_path }
       format.json do
@@ -37,7 +37,7 @@ class ShowingsController < ApplicationController
     @showing = Showing.create(showing_params)
     @showing.theater = @theater
     if @showing.save
-      format_
+      format_showing
     else
       render "index"
     end

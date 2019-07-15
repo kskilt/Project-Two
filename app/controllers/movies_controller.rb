@@ -51,6 +51,11 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def showing
+    @movie = Movie.find(params[:id])
+    render json: @movie.showings, each_serializer: ShowingSerializer
+  end
+
 private
 
   def movie_params

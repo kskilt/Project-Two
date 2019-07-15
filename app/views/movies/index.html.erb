@@ -5,6 +5,13 @@
     <li>
       <h3><%=link_to movie.name, movie_path(movie), class: "movie_link", id: "#{movie.id}"%></h3>
     </li>
+    <li> <% movie.showings.each do |showing| %>
+      <%= showing.time %> at <%= showing.theater.name %>. <%= showing.screen.screen_type %><br>
+
+    <% end %>
+    <div id="list_showings">
+    </div>
+    <button type="submit" value="Submit" class="showing_button" data-id="<%= movie.id %>">See Available Showings!</button>
     <br>
     <div id=<%="movie_#{movie.id}_description"%>>
 
@@ -19,4 +26,5 @@
 
 <%= link_to 'Create New Movie', new_movie_path %>
 
+<%= javascript_include_tag "list_movie_showing_listener.js" %>
 <%= javascript_include_tag "movie_listener.js" %>
