@@ -1,18 +1,13 @@
 <h2>All Movies</h2>
 
-
-
-
 <ul>
   <% @movies.each do |movie| %>
     <li>
-      <h3><%=link_to movie.name, movie_path(movie) %></h3>
+      <h3><%=link_to movie.name, movie_path(movie), class: "movie_link"%></h3>
     </li>
     <br>
     <div id= "movies">
-    <h4>
-      <%= movie.description %>
-    </h4><br>
+
     </div>
     <p> Notice a mistake? <%= link_to 'Click here', edit_movie_path(movie)%> to make a quick change!</p>
     <br>
@@ -23,3 +18,5 @@
 
 
 <%= link_to 'Create New Movie', new_movie_path %>
+
+<%= javascript_include_tag "movie_listener.js" %>

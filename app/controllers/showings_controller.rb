@@ -4,6 +4,7 @@
 class ShowingsController < ApplicationController
   before_action :authorize
   before_action :set_theater, only: %i[new create edit index]
+  skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def set_theater
     @theater = Theater.find(params[:theater_id])

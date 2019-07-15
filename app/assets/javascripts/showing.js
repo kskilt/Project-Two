@@ -22,9 +22,10 @@ class Showing {
         <li>
           Showing Time -  ${this.time_of_day}
         </li>
-        <li>
-         <input type="button" value="Delete Showing"/></input>
-         </li>
+        <form class="button_to" method="post" action="/theaters/${this.theater_id}/showings/${this.id}">
+          <input type="hidden" name="_method" value="delete">
+          <input data-confirm="Are you sure?!" type="submit" value="Delete Showing">
+        </form>
         <br>
       </ul>
     `)
