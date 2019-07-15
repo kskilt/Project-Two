@@ -3,8 +3,10 @@
   <%= text_field_tag(:search, params[:search]) %>
   <%= submit_tag ("Search") %>
 <% end %>
+<h3><%= @theater.name%>
 <div id="showings">
   <% @showings.each do |showing| %>
+  <% if showing.theater_id == @theater.id %>
     <h2><%= link_to showing.movie.name, movie_path(showing.movie_id) %></h2>
     <ul>
       <li>
@@ -13,13 +15,11 @@
       <li>
         Showing Time - <%= showing.time.strftime("%I:%M %p") %>
       </li>
-      <li>
-        <%= link_to showing.theater.name, theater_showings_path(showing) %>
-      </li>
         <%= button_to "Delete Showing", theater_showing_path(showing.theater,showing),
         method: :delete, data: { confirm: 'Are you sure?!' } %>
       <br>
     </ul>
+    <% end %>
   <% end %>
 </div>
 <h3> Create new Showing: </h3>

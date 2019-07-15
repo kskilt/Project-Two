@@ -1,30 +1,25 @@
 // class Showing
 // I don't use jquery here
 class Showing {
-  constructor(time, theater, theater_id, movie, movie_id, screen){
-    this.time = time
-    this.theater = theater
-    this.theater_id = theater_id
-    this.movie = movie
-    this.movie_id = movie_id
-    this.screen = screen
+  constructor(response){
+    this.time = response.time
+    this.theater = response.theater.name
+    this.theater_id = response.theater_id
+    this.movie = response.movie.name
+    this.movie_id = response.movie_id
+    this.screen = response.screen.screen_type
   }
 
   showingTemplate(showing) {
-    return(`
-      <h2>${this.time}</h2>
+    list.append(`
+      <h2><a href="localhost:3000/movies/${this.movie_id}"> ${this.movie}"</h2>
   <ul>
     <li>
-      Showing Day - <%= showing.time.strftime("%b %d  - %Y") %>
+      Showing Day - ${this.time}
     </li>
     <li>
-      Showing Time - <%= showing.time.strftime("%I:%M %p") %>
+      Showing Time -  ${this.time}
     </li>
-    <li>
-      <%= link_to showing.theater, theater_showings_path(showing) %>
-    </li>
-      <%= button_to "Delete Showing", theater_showing_path(showing.theater,showing),
-      method: :delete, data: { confirm: 'Are you sure?!' } %>
     <br>
   </ul>
     `)

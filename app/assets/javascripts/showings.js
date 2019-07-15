@@ -12,16 +12,10 @@ $(function()  {
       data: $(this).serializeArray()
     }).done(function(response){
       console.log(response)
-      const time = response.time
-      const theater = response.theater.name
-      const theater_id = response.theater_id
-      const movie = response.movie.name
-      const movie_id = response.movie_id
-      const screen = response.screen.screen_type
-      const showing = new Showing(time, theater, theater_id, movie, movie_id, screen)
+      const showing = new Showing(response)
 
-      console.log(showing.showingTemplate())
-
+      showing.showingTemplate()
+      const list = $("#showings")
 // grab an place in the DOM you want to add content
 
 // append/add/replace that spot in the DOM with yourObject.yourObjectsEl()

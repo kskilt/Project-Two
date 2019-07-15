@@ -10,6 +10,7 @@ class ShowingsController < ApplicationController
   end
 
   def index
+    set_theater
     @showing = Showing.new
     @showings = Showing.search(params[:search])
   end
