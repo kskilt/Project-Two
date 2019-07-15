@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ShowingSerializer < ActiveModel::Serializer
-  attributes :id, :movie_id, :theater_id, :day, :time_of_day, :theater_name, :movie_name, :screen_type
+  attributes :id, :movie_id, :theater_id,
+             :day, :time_of_day, :theater_name, :movie_name,
+             :screen_type
 
   def day
     object.time.strftime("%b %d  - %Y")

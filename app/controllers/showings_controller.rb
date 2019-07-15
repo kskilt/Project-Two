@@ -24,18 +24,20 @@ class ShowingsController < ApplicationController
     @showing = Showing.new
   end
 
+  def format_
+    respond_to do |format|
+      format.html { redirect_to theater_showings_path }
+      format.json do
+        render json: @showing
+      end
+    end
+  end
+
   def create
-    # render_to that specifies different format
     @showing = Showing.create(showing_params)
     @showing.theater = @theater
     if @showing.save
-      # binding.pry
-      respond_to do |format|
-        format.html { redirect_to theater_showings_path }
-        format.json do
-          render json: @showing
-        end
-      end
+      format_
     else
       render "index"
     end
