@@ -9,14 +9,17 @@
       <h3><%=link_to movie.name, movie_path(movie) %></h3>
     </li>
     <br>
+    <div id= "movies">
     <h4>
       <%= movie.description %>
     </h4><br>
+    </div>
     <p> Notice a mistake? <%= link_to 'Click here', edit_movie_path(movie)%> to make a quick change!</p>
     <br>
     <%= button_to "Delete Movie", movies_path,
       method: :delete, data: { confirm: 'Are you sure?!' } %>
   <% end %>
 </ul>
+
 
 <%= link_to 'Create New Movie', new_movie_path %>

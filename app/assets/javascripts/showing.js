@@ -11,7 +11,7 @@ class Showing {
   }
 
   showingTemplate(showing) {
-    list.append(`
+    $("div.showing").append(`
       <h2><a href="localhost:3000/movies/${this.movie_id}"> ${this.movie}"</h2>
   <ul>
     <li>
