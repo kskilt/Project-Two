@@ -3,10 +3,10 @@
 <ul>
   <% @movies.each do |movie| %>
     <li>
-      <h3><%=link_to movie.name, movie_path(movie), class: "movie_link"%></h3>
+      <h3><%=link_to movie.name, movie_path(movie), class: "movie_link", id: "#{movie.id}"%></h3>
     </li>
     <br>
-    <div id= "movies">
+    <div id=<%="movie_#{movie.id}_description"%>>
 
     </div>
     <p> Notice a mistake? <%= link_to 'Click here', edit_movie_path(movie)%> to make a quick change!</p>
