@@ -5,6 +5,12 @@ class MoviesController < ApplicationController
   before_action :authorize
   def index
     @movies = Movie.all
+    respond_to do |format|
+      format.html { render :show }
+      format.json do
+        render json: { movie: @movie }
+      end
+    end
   end
 
   def show
