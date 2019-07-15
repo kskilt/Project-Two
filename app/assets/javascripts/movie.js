@@ -1,13 +1,15 @@
+//class Movie
+
 class Movie {
-  constructor(movie){
-    this.description = movie.description
-    this.movie = movie.name
+  constructor(response){
+    this.description = response.movie.description
+    this.name = response.movie.name
 
   }
 
-  moviesTemplate(movie) {
-    return `
-      <h4> ${movie.description} </h4>
-      `
+  movieTemplate() {
+    $("#movies").append(`
+      <h4> ${this.description} </h4>
+      `)
   }
 }
