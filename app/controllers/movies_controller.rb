@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     respond_to do |format|
-      format.html { render :show }
+      format.html { render :index }
       format.json do
         render json: { movie: @movie }
       end

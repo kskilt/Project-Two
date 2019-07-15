@@ -22,6 +22,9 @@ class Showing {
         <li>
           Showing Time -  ${this.time_of_day}
         </li>
+        <li>
+         <input type="button" value="Delete Showing"/></input>
+         </li>
         <br>
       </ul>
     `)
