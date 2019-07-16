@@ -1,5 +1,4 @@
 // class Showing
-// I don't use jquery here
 class Showing {
   constructor(response){
     this.day = response.day

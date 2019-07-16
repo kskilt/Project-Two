@@ -23,7 +23,6 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-
     if @movie.save
       redirect_to @movie
     else
@@ -47,7 +46,6 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-
     redirect_to movies_path
   end
 
