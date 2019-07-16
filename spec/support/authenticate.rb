@@ -4,3 +4,7 @@ def sign_in(user)
   fill_in "Password", with: user.password;
   click_button "log in"
 end
+
+def stub_authorize
+allow_any_instance_of(ApplicationController).to receive(:authorize).and_return(true)
+end
