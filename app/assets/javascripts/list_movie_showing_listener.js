@@ -7,9 +7,10 @@ $showing.on("click", function(event){
       url: `/movies/${movie_id}/showing`,
       dataType: "JSON"
     }).done(function(response){
-      console.log(response)
       const listShowings = new ListShowings(response)
-      listShowings.listTemplate()
-      const $list = $("#list_showings")
+      console.log(response[0].movie_id)
+      const $list = $(`#list_${response[0].movie_id}_showings`)
+      $list.html("")
+      $list.append(listShowings.listTemplate())
     })
 })

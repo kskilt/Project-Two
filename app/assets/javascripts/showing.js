@@ -10,10 +10,11 @@ class Showing {
     this.movie_id = response.movie_id
     this.screen = response.screen_type
     this.id = response.id
+    this.constructor.all.push(this)
   }
 
   showingTemplate() {
-    $("#showings").append(`
+    return (`
       <h2><a href="localhost:3000/movies/${this.movie_id}"> ${this.movie}</a></h2>
       <ul>
         <li>
@@ -30,4 +31,12 @@ class Showing {
       </ul>
     `)
   }
+
+  movieShowingTemplate() {
+    return(`
+        <li> Tickets available for ${this.day} at ${this.time_of_day} in ${this.screen} for ${this.theater} </li>
+    `)
+  }
 }
+
+Showing.all = []

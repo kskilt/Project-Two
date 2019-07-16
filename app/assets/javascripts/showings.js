@@ -13,8 +13,8 @@ $(function()  {
     }).done(function(response){
       const showing = new Showing(response)
 
-      showing.showingTemplate()
-      const list = $("#showings")
+      $("#showings").append(showing.showingTemplate())
+
 // grab an place in the DOM you want to add content
 
 // append/add/replace that spot in the DOM with yourObject.yourObjectsEl()
