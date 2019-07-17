@@ -1,5 +1,8 @@
 <h2>Select a Theater near you!</h2>
 
+
+      <p> <%= link_to 'IMAX available at this area!', screens_path %> </p>
+
 <ul>
   <% @theaters.each do |theater| %>
     <li>
@@ -7,11 +10,7 @@
     </li>
     <p> <%= theater.location %> </p>
     <p> Number of Screen: <%= theater.screens.count %> </p>
-    <% theater.screens.each  do |screen|%>
-    <% if screen.screen_type == "Imax" %>
-      <p> <%= link_to 'IMAX available at this theater!', screens_path %> </p>
-      <% end %>
-    <% end %>
+
     <br>
   <% end %>
 </ul>

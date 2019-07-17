@@ -2,34 +2,27 @@ require "rails_helper"
 
 RSpec.describe "New Movie", :type => :request do
 
-  it "creates a movie and redirects to the Movie's index page" do
+  it "creates a movie and redirects to the Movie's show page" do
+    movie = create(:movie)
+
     stub_authorize
-    get "/movies/new"
-    expect(response).to render_template(:new)
 
-    post "/movies", :movie => {:name => "My Widget", :description => "Widget description"}
-
-    expect(response).to redirect_to(assigns(:movie))
-    follow_redirect!
-
+    get "/movies/#{movie.id}"
     expect(response).to render_template(:show)
-    expect(response.body).to include("My Widget")
   end
 end
 
-require "rails_helper"
+RSpec.describe "Movie index request", type: :request do
 
-RSpec.describe "Movie request", type: :request do
-
-  it "Creates a movie and redirects to the movie's page" do
+  it "Renders the index page" do
     stub_authorize
-    get "/movies"
+    get "/movies/"
     expect(response).to render_template(:index)
   end
 
   it "Does not render a different template" do
     stub_authorize
-    get "/movies/new"
+    get "/movies/"
     expect(response).to_not render_template(:show)
   end
 end
